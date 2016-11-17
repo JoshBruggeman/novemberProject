@@ -2,6 +2,8 @@ $('#findMovie').on('click', function() {
 
     // Here we grab the text from the input box
     var movie = $('#movie-input').val();
+    //empies the search box
+    $('#movie-input').val("");
 
     // Here we assemble our URL
     var queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&r=json";
