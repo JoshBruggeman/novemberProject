@@ -12,10 +12,10 @@
     <title>Streaming Assistant</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet">
+    <link href="business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -124,16 +124,19 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">Info on what you want to watch
-                        
+
                     </h2>
                     <hr>
                     <form>
     <div class="form-group">
       <label for="inputdefault">Enter TV Show or Movie</label>
-      <input class="form-control" id="inputdefault" type="text">
+      <input class="form-control" id="movie-input" type="text"><br>
+      <input class="btn btn-default" id="findMovie" type="submit" value="Movie Search">
     </div>
     </form>
-                    <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
+          <div class="" id="moviePoster">
+            <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
+          </div>
                     <hr class="visible-xs">
                     <p>Movie Info from OMDB goes here.</p>
                     <div id="movieInfo"></div>
@@ -168,6 +171,7 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
+
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
@@ -177,6 +181,9 @@
         interval: 5000 //changes the speed
     })
     </script>
+
+    <!-- script for movie data app -->
+    <script src="js/dataApp.js"></script>
 
 </body>
 
