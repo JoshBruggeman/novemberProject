@@ -12,12 +12,14 @@ $('#findMovie').on('click', function() {
     }).done(function(movieData) {
         console.log(movieData);
         if (movieData.Plot === undefined) {
-            $('#movieInfo').html("Learn how to spell, please.");
+            $('#tbInfo').html("Learn how to spell, please.");
+            $('#moviePoster').empty();
+            $('#moviePoster').html('<img class="img-responsive img-border img-left" src="img/spell.jpg">');
         } else {
             // $('#movieInfo').html("<p> " + movieData.Plot + " <i>another word</i></p>");
             $('#moviePoster').empty();
             //empties the info inside of the table so it does not add to the previous information.
-            $('.info').empty();
+            $('.tbInfo').empty();
             // adds movie poster
             $('#moviePoster').html(' <img class="img-responsive img-border img-left" src=' + movieData.Poster + ' alt="">');
 
