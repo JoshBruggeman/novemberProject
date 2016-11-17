@@ -134,12 +134,34 @@
       <input class="btn btn-default" id="findMovie" type="submit" value="Movie Search">
     </div>
     </form>
-          <div class="" id="moviePoster">
+
+       <div class="row">
+
+          <div class="col-md-3" id="moviePoster">
             <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
           </div>
                     <hr class="visible-xs">
                     <p>Movie Info from OMDB goes here.</p>
-                    <div id="movieInfo"></div>
+                    <div class="col-md-9" id="movieInfo">
+          <!--table for movie info  -->
+          <table class="info table img-right">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        <th>Director</th>
+        <th>Actors</th>
+        <th>Runtime</th>
+        <th>plot</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+  </table>
+
+  </div>
+</div>
                 </div>
             </div>
         </div>
