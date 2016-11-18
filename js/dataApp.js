@@ -1,7 +1,12 @@
+var config = {
+    apiKey: "AIzaSyDDKwd7hwHCCaDx6LWfHaoTj7nUnwrhXc8",
+    authDomain: "myfirstfirebase-d797a.firebaseapp.com",
+    databaseURL: "https://myfirstfirebase-d797a.firebaseio.com",
+    storageBucket: "myfirstfirebase-d797a.appspot.com",
+};
+firebase.initializeApp(config);
 
-
-
-
+var database = firebase.database();
 
 
 
@@ -32,11 +37,7 @@ $('#findMovie').on('click', function() {
             // adds movie poster
             $('#moviePoster').html(' <img class="img-responsive img-border img-left" src=' + movieData.Poster + ' alt="">');
 
-<<<<<<< HEAD
-            $("#tbInfo").html("<tr><th>Title</th><td>" + movieData.Title + "</td></tr><tr><th>Genre</th><td>" + movieData.Genre + "</td></tr><tr><th>Rated</th><td>" + movieData.Rated + "</td></tr><tr><th>Director</th><td>" + movieData.Director + "</td></tr><tr><th>Actors</th><td>" + movieData.Actors + "</td></tr><tr><th>Runtime</th><td>" + movieData.Runtime + "</td></tr><tr><th>Plot</th><td>" + movieData.Plot + "</th></tr>");
-=======
             $("#tbInfo").html("<tr><th>Title</th><td>"+movieData.Title+"</td></tr><tr><th>Genre</th><td>"+movieData.Genre+"</td></tr><tr><th>Awards</th><td>"+movieData.Awards+"</td></tr><tr><th>Rated</th><td>"+movieData.Rated+"</td></tr><tr><th>Director</th><td>"+movieData.Director+"</td></tr><tr><th>Casts</th><td>"+movieData.Actors+"</td></tr><tr><th>Runtime</th><td>"+movieData.Runtime+"</td></tr><tr><th>Plot</th><td>"+movieData.Plot+"</th></tr>");
->>>>>>> 75c1044515b977c291a741437dbdf2a1a93a9a4d
 
 
         }
