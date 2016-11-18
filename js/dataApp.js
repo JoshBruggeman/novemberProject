@@ -25,7 +25,7 @@ $('#findMovie').on('click', function() {
             // adds movie poster
             $('#moviePoster').html(' <img class="img-responsive img-border img-left" src=' + movieData.Poster + ' alt="">');
 
-            $("#tbInfo").html("<tr><th>Title</th><td>"+movieData.Title+"</td></tr><tr><th>Genre</th><td>"+movieData.Genre+"</td></tr><tr><th>Rated</th><td>"+movieData.Rated+"</td></tr><tr><th>Director</th><td>"+movieData.Director+"</td></tr><tr><th>Actors</th><td>"+movieData.Actors+"</td></tr><tr><th>Runtime</th><td>"+movieData.Runtime+"</td></tr><tr><th>Plot</th><td>"+movieData.Plot+"</th></tr>");
+            $("#tbInfo").html("<tr><th>Title</th><td>" + movieData.Title + "</td></tr><tr><th>Genre</th><td>" + movieData.Genre + "</td></tr><tr><th>Rated</th><td>" + movieData.Rated + "</td></tr><tr><th>Director</th><td>" + movieData.Director + "</td></tr><tr><th>Actors</th><td>" + movieData.Actors + "</td></tr><tr><th>Runtime</th><td>" + movieData.Runtime + "</td></tr><tr><th>Plot</th><td>" + movieData.Plot + "</th></tr>");
 
 
         }
