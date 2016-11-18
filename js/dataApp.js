@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 $('#findMovie').on('click', function() {
 
     // Here we grab the text from the input box
