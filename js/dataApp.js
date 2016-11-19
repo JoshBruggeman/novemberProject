@@ -1,9 +1,12 @@
+var config = {
+    apiKey: "AIzaSyDDKwd7hwHCCaDx6LWfHaoTj7nUnwrhXc8",
+    authDomain: "myfirstfirebase-d797a.firebaseapp.com",
+    databaseURL: "https://myfirstfirebase-d797a.firebaseio.com",
+    storageBucket: "myfirstfirebase-d797a.appspot.com",
+};
+firebase.initializeApp(config);
 
-
-
-
-
-
+var database = firebase.database();
 
 $('#findMovie').on('click', function() {
 
