@@ -31,6 +31,28 @@ $("#clickButton").on("click", function() {
   });
 });
 
+  // listening for the value event, if value changes of variables referenced on screen.
+  // watching for changes in the database
+  database.ref().on("value", function(snapshot) {
+
+    // our whole freaking database
+    console.log(snapshot.val());
+
+    // grabbing the clickValue h1 and updating the number of clicks and using jqeury to update the DOM
+    $("#clickValue").html(snapshot.val().clickCount);
+
+    //  Initial load of the page, set the clickCounter
+    //to something besides 0
+    clickCounter = snapshot.val().clickCount;
+
+    // 
+  }, function(errorObject) {
+
+    // 
+    console.log("The read failed: " + errorObject.code);
+
+  });
+
 
 $('#findMovie').on('click', function() {
 
