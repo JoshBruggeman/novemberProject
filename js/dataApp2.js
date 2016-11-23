@@ -1,13 +1,57 @@
-// var config = {
-//     apiKey: "AIzaSyDDKwd7hwHCCaDx6LWfHaoTj7nUnwrhXc8",
-//     authDomain: "myfirstfirebase-d797a.firebaseapp.com",
-//     databaseURL: "https://myfirstfirebase-d797a.firebaseio.com",
-//     storageBucket: "myfirstfirebase-d797a.appspot.com",
-// };
+// Link to our Firebase Database.
+var config = {
+    apiKey: "AIzaSyDDKwd7hwHCCaDx6LWfHaoTj7nUnwrhXc8",
+    authDomain: "myfirstfirebase-d797a.firebaseapp.com",
+    databaseURL: "https://myfirstfirebase-d797a.firebaseio.com",
+    storageBucket: "myfirstfirebase-d797a.appspot.com",
+    messagingSenderId: "80889691492"
+};
+// Initializing our firebase app
+firebase.initializeApp(config);
 
-// firebase.initializeApp(config);
+// Returning the database from the firebase object, my using a method.
+var database = firebase.database();
 
-// var database = firebase.database();
+// Starting our clickCounter at 0
+var clickCounter = 0;
+
+// FUNCTIONS + EVENTS
+// --------------------------------------------------------------------------------
+
+// on click of the button with the ID "clickButton"
+// 1. update counter in our javascript
+$("#clickButton").on("click", function() {
+
+  // add 1 to the clickCounter
+  clickCounter++;
+
+  // update the database
+  database.ref().set({
+    clickCount: clickCounter
+  });
+});
+
+  // listening for the value event, if value changes of variables referenced on screen.
+  // watching for changes in the database
+  database.ref().on("value", function(snapshot) {
+
+    // our whole freaking database
+    console.log(snapshot.val());
+
+    // grabbing the clickValue h1 and updating the number of clicks and using jqeury to update the DOM
+    $("#clickValue").html(snapshot.val().clickCount);
+
+    //  Initial load of the page, set the clickCounter
+    //to something besides 0
+    clickCounter = snapshot.val().clickCount;
+
+    // 
+  }, function(errorObject) {
+
+    // 
+    console.log("The read failed: " + errorObject.code);
+
+  });
 
 
 $('#findMovie').on('click', function() {
