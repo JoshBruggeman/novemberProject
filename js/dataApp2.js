@@ -9,7 +9,7 @@
 
 // var database = firebase.database();
 
-
+//omdb API.
 $('#findMovie').on('click', function() {
 
     // Here we grab the text from the input box
@@ -29,27 +29,44 @@ $('#findMovie').on('click', function() {
 
 
 var getTrailer = function(showTitle) {
-  console.log("showtitle",showTitle);
+  // console.log("showtitle",showTitle);
 	 var youTubeQ = showTitle.trim().replace(/\s/g, '+') + "theatrical trailer".replace(/\s/g, '+');
      var queryURL1 = 'https://www.googleapis.com/youtube/v3/search?q='+ youTubeQ +'&key=AIzaSyCYEdIB9JsOjKavFMHhFT9snrSJ7ROCTDQ&part=snippet';
-     console.log(queryURL1);
+    //  console.log(queryURL1);
 	  $.ajax({
         url: queryURL1,
         method: 'GET'
-    }).done(function(response) {
+    }).done(processYoutube);
 
-	  	console.log(response);
-      $('#movie-input').val("");
+   return false;
+};
 
 
-	  });
+//function for the extracting youtube trailer from API
+var processYoutube = function(youtube){
+    console.log(youtube);
+    $('#movie-input').val("");
+    //brings youtube object for the first items
+    var youtubeOb = youtube.items[0];
+    console.log("videoOb",youtubeOb);
+    //This extracts the youtube video id from the item.
+    var videoId = youtubeOb.id.videoId;
+    //This prints the id of youtube video.
+    console.log(videoId);
+
+    $('#youtube').html('<iframe width="206" height="280" src="https://www.youtube.com/embed/'+videoId+'" frameborder="0" allowfullscreen></iframe>');
 
 };
+
+
+
+
+
 
 var trailerInput = document.getElementById("movie-input");
 
 	document.getElementById("findMovie").onclick = function(){
-    console.log("input",trailerInput);
+    // console.log("input",trailerInput);
      getTrailer(trailerInput.value);
   };
 
