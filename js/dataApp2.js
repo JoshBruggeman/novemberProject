@@ -53,14 +53,13 @@ $("#clickButton").on("click", function() {
 
   });
 
-
+//omdb API.
 $('#findMovie').on('click', function() {
 
     // Here we grab the text from the input box
     var movie = $('#movie-input').val();
     //empties the seaarch engine
-    $('#movie-input').val("");
-
+    //
     // Here we assemble our URL
     var queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&r=json";
 
@@ -72,22 +71,46 @@ $('#findMovie').on('click', function() {
     return false;
 });
 
+
 var getTrailer = function(showTitle) {
+  // console.log("showtitle",showTitle);
 	 var youTubeQ = showTitle.trim().replace(/\s/g, '+') + "theatrical trailer".replace(/\s/g, '+');
-     var queryURL1 = 'https://www.googleapis.com/youtube/v3/search?q='+ youTubeQ +'&key=AIzaSyDOkg-u9jnhP-WnzX5WPJyV1sc5QQrtuyc&part=snippet';
+     var queryURL1 = 'https://www.googleapis.com/youtube/v3/search?q='+ youTubeQ +'&key=AIzaSyCYEdIB9JsOjKavFMHhFT9snrSJ7ROCTDQ&part=snippet';
+    //  console.log(queryURL1);
 	  $.ajax({
         url: queryURL1,
         method: 'GET'
-    }).done(function(response) {
+    }).done(processYoutube);
 
-	  	console.log(response);
-
-	  });
-	  
+   return false;
 };
 
+
+//function for the extracting youtube trailer from API
+var processYoutube = function(youtube){
+    console.log(youtube);
+    $('#movie-input').val("");
+    //brings youtube object for the first items
+    var youtubeOb = youtube.items[0];
+    console.log("videoOb",youtubeOb);
+    //This extracts the youtube video id from the item.
+    var videoId = youtubeOb.id.videoId;
+    //This prints the id of youtube video.
+    console.log(videoId);
+
+    $('#youtube').html('<iframe width="206" height="280" src="https://www.youtube.com/embed/'+videoId+'" frameborder="0" allowfullscreen></iframe>');
+
+};
+
+
+
+
+
+
 var trailerInput = document.getElementById("movie-input");
+
 	document.getElementById("findMovie").onclick = function(){
+    // console.log("input",trailerInput);
      getTrailer(trailerInput.value);
   };
 
@@ -108,10 +131,7 @@ var processMovieData = function(movieData) {
 
             $("#tbInfo").html("<tr><th>Title</th><td>"+movieData.Title+"</td></tr><tr><th>Genre</th><td>"+movieData.Genre+"</td></tr><tr><th>Awards</th><td>"+movieData.Awards+"</td></tr><tr><th>Rated</th><td>"+movieData.Rated+"</td></tr><tr><th>Director</th><td>"+movieData.Director+"</td></tr><tr><th>Casts</th><td>"+movieData.Actors+"</td></tr><tr><th>Runtime</th><td>"+movieData.Runtime+"</td></tr><tr><th>Plot</th><td>"+movieData.Plot+"</th></tr>");
 
-        
+
         }
- 
+
     };
-
-
-
