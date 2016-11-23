@@ -28,6 +28,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+   <!--video.js CDN  -->
+     <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
+     <!-- If you'd like to support IE8 -->
+     <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
 </head>
 
 <body>
@@ -153,8 +158,8 @@
                     <hr>
                     <form>
                         <div class="form-group">
-                            <label for="inputdefault">Enter TV Show or Movie</label>
-                            <input class="form-control" id="movie-input" type="text"><br>
+                            <label for="inputdefault">Enter TV Show or Movie. Be specific.(eg, The fellowship of the ring)</label>
+                            <input class="form-control enter" value="" id="movie-input" type="text"><br>
                             <input class="btn btn-default" id="findMovie" type="submit" value="Movie Search">
                         </div>
                     </form>
@@ -165,13 +170,15 @@
                             <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
                         </div>
                         <hr class="visible-xs">
-                        <p>Info on the Show or Movie</p>
-                        <div class="col-md-9" id="movieInfo">
+                        <!-- <p>Info on the Show or Movie</p> -->
+                        <div class="col-md-6" id="movieInfo">
                             <!--table for movie info  -->
                             <table class="info table table-responsive table-striped" id="tbInfo">
                             </table>
 
+
                         </div>
+                            <div class="col-md-3" id="youtube"></div>
                     </div>
                 </div>
             </div>
