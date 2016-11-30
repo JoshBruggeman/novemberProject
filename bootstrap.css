@@ -6755,3 +6755,18 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+/*.sticker {
+  position: relative;
+width: 180px;
+height: 180px;
+margin: 100px;
+}
+
+
+.josh .sticker-img {
+background-image: url(img/josh.jpg);
+}
+
+ .josh .sticker-shadow {
+            opacity: 0.6;
+        }*/
