@@ -98,7 +98,7 @@ var processYoutube = function(youtube){
     //This prints the id of youtube video.
     console.log(videoId);
 
-    $('#youtube').html('<iframe width="100%" height="280" src="https://www.youtube.com/embed/'+videoId+'" frameborder="0" allowfullscreen></iframe>');
+    $('#youtube').html('<iframe width="100%" height="340" src="https://www.youtube.com/embed/'+videoId+'" frameborder="0" allowfullscreen></iframe>');
 
 };
 
