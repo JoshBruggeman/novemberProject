@@ -222,3 +222,7 @@ background-image: url(img/josh.jpg);
 .ara .sticker-shadow {
     opacity: 0.6;
 }
+
+.names {
+    margin-left: 45px;
+}
