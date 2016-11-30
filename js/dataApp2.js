@@ -45,10 +45,10 @@ $("#clickButton").on("click", function() {
     //to something besides 0
     clickCounter = snapshot.val().clickCount;
 
-    // 
+    //
   }, function(errorObject) {
 
-    // 
+    //
     console.log("The read failed: " + errorObject.code);
 
   });
@@ -74,7 +74,7 @@ $('#findMovie').on('click', function() {
 
 var getTrailer = function(showTitle) {
   // console.log("showtitle",showTitle);
-	 var youTubeQ = showTitle.trim().replace(/\s/g, '+') + "theatrical trailer".replace(/\s/g, '+');
+	 var youTubeQ = showTitle.trim().replace(/\s/g, '+') + "movie clips".replace(/\s/g, '+');
      var queryURL1 = 'https://www.googleapis.com/youtube/v3/search?q='+ youTubeQ +'&key=AIzaSyCYEdIB9JsOjKavFMHhFT9snrSJ7ROCTDQ&part=snippet';
     //  console.log(queryURL1);
 	  $.ajax({
@@ -88,17 +88,39 @@ var getTrailer = function(showTitle) {
 
 //function for the extracting youtube trailer from API
 var processYoutube = function(youtube){
-    console.log(youtube);
+    console.log("youtue object",youtube);
     $('#movie-input').val("");
-    //brings youtube object for the first items
-    var youtubeOb = youtube.items[0];
-    console.log("videoOb",youtubeOb);
-    //This extracts the youtube video id from the item.
-    var videoId = youtubeOb.id.videoId;
-    //This prints the id of youtube video.
-    console.log(videoId);
+    //
+    for(var i =0; i<5; i++){
+      var youtubeOb = youtube.items[i];
+      var videoId = youtubeOb.id.videoId;
+      console.log(videoId);
+      var youtubeDiv=$('<div class="row">');
 
-    $('#youtube').html('<iframe width="206" height="280" src="https://www.youtube.com/embed/'+videoId+'" frameborder="0" allowfullscreen></iframe>');
+      var youtubeIframe = $('<iframe>');
+
+      youtubeIframe.attr('src','https://www.youtube.com/embed/'+videoId+'');
+      youtubeIframe.attr('width','210');
+
+      youtubeDiv.append(youtubeIframe);
+      $('#youtube').prepend(youtubeDiv);
+
+
+
+
+
+    }
+
+    //   //brings youtube object for the first items
+    //   var youtubeOb = youtube.items[0];
+    //   console.log("videoOb",youtubeOb);
+    //   //This extracts the youtube video id from the item.
+    //   var videoId = youtubeOb.id.videoId;
+    //   //This prints the id of youtube video.
+    //   console.log(videoId);
+    // //
+    //   $('#youtube').html('<iframe width="206" height="280" src="https://www.youtube.com/embed/'+videoId+'" frameborder="0" allowfullscreen></iframe>');
+    //
 
 };
 
@@ -111,16 +133,22 @@ var trailerInput = document.getElementById("movie-input");
 
 	document.getElementById("findMovie").onclick = function(){
     // console.log("input",trailerInput);
-     getTrailer(trailerInput.value);
+    if (trailerInput.value == ""){
+      $('#youtube').empty();
+    }else{
+      $('#youtube').empty();
+      getTrailer(trailerInput.value);
+    }
   };
 
 var processMovieData = function(movieData) {
-        console.log(movieData);
+        console.log("moviedata",movieData);
         // console.log(movieTrialer);
         if (movieData.Plot === undefined) {
             $('#tbInfo').html("Learn how to spell, please.");
             $('#moviePoster').empty();
             $('#moviePoster').html('<img class="img-responsive img-border img-left" src="img/spell.jpg">');
+
         } else {
             // $('#movieInfo').html("<p> " + movieData.Plot + " <i>another word</i></p>");
             $('#moviePoster').empty();
@@ -135,3 +163,25 @@ var processMovieData = function(movieData) {
         }
 
     };
+
+//=========================================
+//user inout validation form function
+//
+// function validateForm() {
+//   console.log("hey");
+//     var x = document.forms["myForm"]["fname"].value;
+//     if (x == "") {
+//         alert("Name must be filled out");
+//         return false;
+//     }
+// }
+
+//this is not working and i am not sure why
+
+ // function validateForm() {
+ //   var input = document.getElementById("movie-input").value;
+ //   if(input === ""){
+ //     alert("must filled out");
+ //     return false;
+ //   }
+ // }
