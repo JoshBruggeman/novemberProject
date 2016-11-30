@@ -105,10 +105,6 @@ var processYoutube = function(youtube){
       youtubeDiv.append(youtubeIframe);
       $('#youtube').prepend(youtubeDiv);
 
-
-
-
-
     }
 
     //   //brings youtube object for the first items
@@ -157,31 +153,40 @@ var processMovieData = function(movieData) {
             // adds movie poster
             $('#moviePoster').html(' <img class="img-responsive img-border img-left" src=' + movieData.Poster + ' alt="">');
 
-            $("#tbInfo").html("<tr><th>Title</th><td>"+movieData.Title+"</td></tr><tr><th>Genre</th><td>"+movieData.Genre+"</td></tr><tr><th>Awards</th><td>"+movieData.Awards+"</td></tr><tr><th>Rated</th><td>"+movieData.Rated+"</td></tr><tr><th>Director</th><td>"+movieData.Director+"</td></tr><tr><th>Casts</th><td>"+movieData.Actors+"</td></tr><tr><th>Runtime</th><td>"+movieData.Runtime+"</td></tr><tr><th>Plot</th><td>"+movieData.Plot+"</th></tr>");
+            $("#tbInfo").html("<tr><th>Title</th><td>"+movieData.Title+" ("+(movieData.Year)+")</td></tr><tr><th>Genre</th><td>"+movieData.Genre+"</td></tr><tr><th>Awards</th><td>"+movieData.Awards+"</td></tr><tr><th>Rated</th><td>"+movieData.Rated+"</td></tr><tr><th>Director</th><td>"+movieData.Director+"</td></tr><tr><th>Casts</th><td>"+movieData.Actors+"</td></tr><tr><th>Runtime</th><td>"+movieData.Runtime+"</td></tr><tr><th>Plot</th><td>"+movieData.Plot+"</th></tr>");
 
 
         }
 
     };
 
-//=========================================
-//user inout validation form function
-//
-// function validateForm() {
-//   console.log("hey");
-//     var x = document.forms["myForm"]["fname"].value;
-//     if (x == "") {
-//         alert("Name must be filled out");
-//         return false;
-//     }
-// }
+// User Input Validation
+// $(document).ready(function() {
 
-//this is not working and i am not sure why
+// $('#movie-input').on('input', function() {
+//   var input=$(this);
+//   var is_name=input.val();
+//   if(is_name){input.removeClass("invalid").addClass("valid");}
+//   else{input.removeClass("valid").addClass("invalid");}
+// });
 
- // function validateForm() {
- //   var input = document.getElementById("movie-input").value;
- //   if(input === ""){
- //     alert("must filled out");
- //     return false;
- //   }
- // }
+// // After Form Submitted Validation
+// $("#findMovie button").click(function(event){
+//   var form_data=$("#contact").serializeArray();
+//   var error_free=true;
+//   for (var input in form_data){
+//     var element=$("#contact" + form_data[input]['name']);
+//     var valid=element.hasClass("valid");
+//     var error_element=$("span", element.parent());
+//     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+//     else{error_element.removeClass("error_show").addClass("error");}
+//   }
+//   if (!error_free){
+//     event.preventDefault();
+//   }
+//   else{
+//     alert('No errors: Form will be submitted');
+//   }
+// });
+
+// });
