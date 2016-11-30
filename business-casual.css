@@ -214,3 +214,11 @@ background-image: url(img/josh.jpg);
 .mark .sticker-shadow {
             opacity: 0.6;
         }
+
+.ara .sticker-img {
+    background-image: url(img/ara.jpg);
+}
+
+.ara .sticker-shadow {
+    opacity: 0.6;
+}
