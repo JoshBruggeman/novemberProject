@@ -207,11 +207,11 @@ background-image: url(img/josh.jpg);
             opacity: 0.6;
         }
 
-.mark .sticker-img {
-    background-image: url(img/mark.jpg);
+.center .sticker-img {
+    background-image: url(img/mark.JPG);
 }
 
-.mark .sticker-shadow {
+.center .sticker-shadow {
             opacity: 0.6;
         }
 
