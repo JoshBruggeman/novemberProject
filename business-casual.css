@@ -190,3 +190,27 @@ footer p {
         clear: both;
     }
 }
+
+.sticker {
+  position: relative;
+width: 200px;
+height: 200px;
+margin: 100px;
+}
+
+
+.josh .sticker-img {
+background-image: url(img/josh.jpg);
+}
+
+ .josh .sticker-shadow {
+            opacity: 0.6;
+        }
+
+.mark .sticker-img {
+    background-image: url(img/mark.jpg);
+}
+
+.mark .sticker-shadow {
+            opacity: 0.6;
+        }

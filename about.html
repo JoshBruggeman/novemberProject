@@ -88,7 +88,7 @@
                 <div class="col-md-6">
                     <p>Streaming Assistant was an idea thought up in Northwestern Coding Boot Camp in 2016.</p>
                     <p>Our goal was to simplify the search for television and movie content.</p>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -104,13 +104,16 @@
                     <hr>
                 </div>
                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                  <div class="sticker josh">
+                    <!-- <img class="img-responsive" src="img/josh.jpg" alt=""> -->
+                    </div>
                     <h3>Josh Bruggeman
 
                     </h3>
                 </div>
                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" id="mark" src="img/mark.JPG" alt="">
+                  <div class="sticker mark">
+                    <!-- <img class="img-responsive" id="mark" src="img/mark.JPG" alt=""> --></div>
                     <h3>Mark Gildea
 
                     </h3>
@@ -143,6 +146,14 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/sticker.min.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            Sticker.init('.sticker');
+        }
+    </script>
 
 </body>
 
