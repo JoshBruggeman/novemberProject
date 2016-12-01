@@ -198,6 +198,12 @@ height: 200px;
 margin: 100px;
 }
 
+.video{
+  float:right;
+  padding: 0;
+
+}
+
 
 .josh .sticker-img {
 background-image: url(img/josh.jpg);

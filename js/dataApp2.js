@@ -74,7 +74,7 @@ $('#findMovie').on('click', function() {
 
 var getTrailer = function(showTitle) {
   // console.log("showtitle",showTitle);
-	 var youTubeQ = showTitle.trim().replace(/\s/g, '+') + "movie clips".replace(/\s/g, '+');
+	 var youTubeQ = showTitle.trim().replace(/\s/g, '+') + "theatrical trailer".replace(/\s/g, '+');
      var queryURL1 = 'https://www.googleapis.com/youtube/v3/search?q='+ youTubeQ +'&key=AIzaSyCYEdIB9JsOjKavFMHhFT9snrSJ7ROCTDQ&part=snippet';
     //  console.log(queryURL1);
 	  $.ajax({
@@ -91,16 +91,19 @@ var processYoutube = function(youtube){
     console.log("youtue object",youtube);
     $('#movie-input').val("");
     //
-    for(var i =0; i<5; i++){
+    for(var i =0; i<2; i++){
       var youtubeOb = youtube.items[i];
       var videoId = youtubeOb.id.videoId;
       console.log(videoId);
-      var youtubeDiv=$('<div class="row">');
+      var youtubeDiv=$('<div class="video col-md-6">');
 
       var youtubeIframe = $('<iframe>');
 
       youtubeIframe.attr('src','https://www.youtube.com/embed/'+videoId+'');
-      youtubeIframe.attr('width','210');
+      youtubeIframe.attr('width','100%');
+      youtubeIframe.attr('height','350');
+
+      youtubeIframe.attr('allowfullscreen','allowfullscreen');
 
       youtubeDiv.append(youtubeIframe);
       $('#youtube').prepend(youtubeDiv);
