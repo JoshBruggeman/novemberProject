@@ -1,13 +1,3 @@
-// var config = {
-//     apiKey: "AIzaSyDDKwd7hwHCCaDx6LWfHaoTj7nUnwrhXc8",
-//     authDomain: "myfirstfirebase-d797a.firebaseapp.com",
-//     databaseURL: "https://myfirstfirebase-d797a.firebaseio.com",
-//     storageBucket: "myfirstfirebase-d797a.appspot.com",
-// };
-// firebase.initializeApp(config);
-
-// var database = firebase.database();
-
 var APIKey = "da3a3a9bfd27ba7348d328942a8614b0";
 
 $('#findMovie').on('click', function() {

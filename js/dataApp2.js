@@ -9,7 +9,7 @@ var config = {
 // Initializing our firebase app
 firebase.initializeApp(config);
 
-// Returning the database from the firebase object, my using a method.
+// Returning the database from the firebase object, by using a method.
 var database = firebase.database();
 
 // Starting our clickCounter at 0
