@@ -1,4 +1,4 @@
-var APIKey = "da3a3a9bfd27ba7348d328942a8614b0";
+var APIKey = "8e1f4afb";
 
 $('#findMovie').on('click', function() {
 
@@ -8,7 +8,7 @@ $('#findMovie').on('click', function() {
     $('#movie-input').val("");
 
     // Here we assemble our URL
-    var queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&r=json";
+    var queryURL = "http://www.omdbapi.com/?i=tt3896198&apikey=8e1f4afb" + movie + "&y=&plot=short&r=json";
 
     $.ajax({
         url: queryURL,

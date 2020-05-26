@@ -61,7 +61,7 @@ $('#findMovie').on('click', function() {
     //empties the seaarch engine
     //
     // Here we assemble our URL
-    var queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&r=json";
+    var queryURL = "http://www.omdbapi.com/?i=tt3896198&apikey=8e1f4afb" + movie + "&y=&plot=short&r=json";
 
     $.ajax({
         url: queryURL,
@@ -75,7 +75,7 @@ $('#findMovie').on('click', function() {
 var getTrailer = function(showTitle) {
   // console.log("showtitle",showTitle);
 	 var youTubeQ = showTitle.trim().replace(/\s/g, '+') + "theatrical trailer".replace(/\s/g, '+');
-     var queryURL1 = 'https://www.googleapis.com/youtube/v3/search?q='+ youTubeQ +'&key=AIzaSyCYEdIB9JsOjKavFMHhFT9snrSJ7ROCTDQ&part=snippet';
+     var queryURL1 = 'https://www.googleapis.com/youtube/v3/search?q='+ youTubeQ +'&key=AIzaSyBug9cQ5zL-RVBt7dq9CJfBqgIhzSRTiWk&part=snippet';
     //  console.log(queryURL1);
 	  $.ajax({
         url: queryURL1,
